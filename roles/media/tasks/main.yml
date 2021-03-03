@@ -25,6 +25,9 @@
     state: latest
     update_cache: yes
   loop:
+    - pulseaudio
+    - pulseaudio-alsa
+    - pulsemixer
     - mpd
     - mpc
     - ncmpcpp
