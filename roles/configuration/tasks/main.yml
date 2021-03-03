@@ -93,19 +93,30 @@
     dest: /tmp/ohmyzsh.sh
     mode: 0700
 
+- name: delete .ohmyzsh
+  ansible.builtin.file:
+    path: /home/guru/.ohmyzsh
+    state: absent
+
 - name: Install oh my zsh
   ansible.builtin.script:
     cmd: /tmp/ohmyzsh.sh
 
-- name: Stow zsh
-  ansible.builtin.shell:
-    cmd: "stow -d $HOME/dotfiles -t ~/ zsh"
+- name: delete .zshrc
+  ansible.builtin.file:
+    path: /home/guru/.zshrc
+    state: absent
 
 - name: Stow zsh
   ansible.builtin.shell:
     cmd: "stow -d $HOME/dotfiles -t ~/ zsh"
+
 
 - name: Install nvim Plug
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     dest: /home/guru/.local/share/nvim/site/autoload/plug.vim
+
+- name: Stow nvim
+  ansible.builtin.shell:
+    cmd: "stow -d $HOME/dotfiles -t ~/ neovim"
