@@ -33,3 +33,17 @@
     - sxiv
     - shotgun
     - slop
+
+- name: Install fonts
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - noto-fonts-emoji
+    - ttf-dejavu
+    - ttf-droid
+    - powerline-fonts
+    - ttf-font-awesome
+    - ttf-liberation
