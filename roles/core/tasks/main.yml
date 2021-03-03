@@ -11,6 +11,7 @@
     - tmux
     - htop
     - vifm
+    - alacritty
 
 - name: Install FS related packages
   become: true
