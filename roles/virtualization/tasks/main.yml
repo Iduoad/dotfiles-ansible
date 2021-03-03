@@ -9,6 +9,7 @@
     - podman
     - buildah
     - skopeo
+    - crun
     - lxc
     - lxd
 
