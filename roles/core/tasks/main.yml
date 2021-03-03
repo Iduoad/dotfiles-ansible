@@ -54,7 +54,7 @@
     - unrar
     - atool
 
-- name: Install network related packages
+- name: Install network and security related packages
   become: true
   community.general.pacman:
     name: "{{ item }}"
@@ -66,3 +66,5 @@
     - rsync
     - zsync
     - rclone
+    - keychain
+    - pass

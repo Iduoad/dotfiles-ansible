@@ -102,6 +102,11 @@
   ansible.builtin.script:
     cmd: /tmp/ohmyzsh.sh
 
+- name: Install syntax highlighting plugin
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: /home/guru/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
 - name: delete .zshrc
   ansible.builtin.file:
     path: /home/guru/.zshrc
