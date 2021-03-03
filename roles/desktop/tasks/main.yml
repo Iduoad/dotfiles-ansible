@@ -16,7 +16,7 @@
   loop:
     - xorg-server
     - xorg-xinit
-    - xorg-backlight
+    - xorg-xbacklight
     - xclip
     - arandr
     - redshift
