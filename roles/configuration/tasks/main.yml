@@ -1,0 +1,114 @@
+---
+- name: Create .config folder structure
+  ansible.builtin.file:
+    path: "/home/guru/.config/{{ item }}"
+    state: directory
+  loop:
+    - alacritty
+    - aws
+    - browser
+    - bspwm
+    - calcurse
+    - containers
+    - dunst
+    - git
+    - mpv
+    - mpd
+    - ncmpcpp
+    - neomutt
+    - neomutt/mutt
+    - nvim
+    - newsboat
+    - polybar
+    - rofi
+    - rtv
+    - surfraw
+    - surfraw/elvi
+    - sxhkd
+    - tmux
+    - tmux/conf/sessions
+    - vifm
+    - vifm/colors
+    - vifm/scripts
+    - youtube-dl
+    - zathura
+
+- name: Create data folder structure
+  ansible.builtin.file:
+    path: "/home/guru/.local/{{ item }}"
+    state: directory
+  loop:
+    - share/aspell
+    - share/gpg
+    - share/rofi
+    - share/gnupg
+    - share/applications
+    - share/nvim/site/autoload
+    - bin
+
+- name: Create home folder structure
+  ansible.builtin.file:
+    path: "/home/guru/{{ item }}"
+    state: directory
+  loop:
+    - .w3m
+    - .w3m/cgi-bin
+    - .ssh
+
+- name: stow dotfiles
+  ansible.builtin.shell:
+    cmd: "stow -d $HOME/dotfiles -t ~/ {{ item }}"
+  loop:
+    - alacritty
+    - aws
+    - browser
+    - bspwm
+    - calcurse
+    - containers
+    - data
+    - dunst
+    - git
+    - gnupg
+    - mimetypes
+    - mpd
+    - mpv
+    - ncmpcpp
+    - neomutt
+    - neovim
+    - newsboat
+    - polybar
+    - rofi
+    - rtv
+    - surfraw
+    - scripts
+    - ssh
+    - sxhkd
+    - tmux
+    - vifm
+    - w3m
+    - wget
+    - xorg
+    - youtube-dl
+
+- name: Download oh my zsh install script
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/ohmyzsh.sh
+    mode: 0700
+
+- name: Install oh my zsh
+  ansible.builtin.script:
+    cmd: /tmp/ohmyzsh.sh
+
+- name: Stow zsh
+  ansible.builtin.shell:
+    cmd: "stow -d $HOME/dotfiles -t ~/ zsh"
+
+- name: Stow zsh
+  ansible.builtin.shell:
+    cmd: "stow -d $HOME/dotfiles -t ~/ zsh"
+
+- name: Install nvim Plug
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: /home/guru/.local/share/nvim/site/autoload/plug.vim
