@@ -1,0 +1,23 @@
+---
+- name: Install container related packages
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - podman
+    - buildah
+    - skopeo
+    - lxc
+    - lxd
+
+- name: Install virtualization packages
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - qemu
+    - libvirt

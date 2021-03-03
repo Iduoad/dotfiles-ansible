@@ -1,0 +1,48 @@
+- name: Document and image packages
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - zathura
+    - zathura-pdf-mupdf
+    - zathura-djvu
+    - imagemagick
+    - gimp
+    - aspell
+    - aspell-en
+    - pass
+    - calcurse
+    - sdcv
+    - qrencode
+    - abook
+
+- name: media packages
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - mpd
+    - mpc
+    - ncmpcpp
+    - mpv
+    - youtube-dl
+
+- name: web and internet packages
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - firefox
+    - w3m
+    - surfraw
+    - newsboat
+    - neomutt
+    - transmission-cli
+    - openssh
+    - rtv

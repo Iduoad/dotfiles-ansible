@@ -1,0 +1,15 @@
+---
+- name: Install core packages using Pacman
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - git
+    - stow
+
+- name: Clone dotfiles to home directory
+  ansible.builtin.git:
+    repo: https://github.com/iduoad/dotfiles.git
+    dest: /home/guru/dotfiles

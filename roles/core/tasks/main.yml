@@ -1,0 +1,67 @@
+---
+- name: Install FS related packages
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - neovim
+    - zsh
+    - tmux
+    - htop
+    - vifm
+
+- name: Install FS related packages
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - e2fsprogs
+    - btrfs-progs
+    - ntfs-3g
+    - exfatprogs
+    - dosfstools
+
+- name: Install core utils packages
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - mlocate
+    - bat
+    - tree
+    - entr
+    - fzf
+    - ripgrep
+    - jq
+    - z
+
+- name: Install archiving and compression related packages
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - zip
+    - unzip
+    - unrar
+    - atool
+
+- name: Install network related packages
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - openssh
+    - wget
+    - rsync
+    - zsync
+    - rclone

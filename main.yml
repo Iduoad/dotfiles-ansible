@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: localhost
+  roles:
+    - setup
+    - core
+    - desktop
+    - media
+    - virtualization

@@ -1,0 +1,36 @@
+- name: Install low level drivers
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - xf86-video-intel
+    - mesa
+    - lib32-mesa
+- name: Install Xorg related packages
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - xorg-server
+    - xorg-xinit
+    - xorg-backlight
+    - xclip
+    - arandr
+    - redshift
+    - xdotool
+    - bspwm
+    - sxhkd
+    - i3lock
+    - unclutter
+    - dunst
+    - dmenu
+    - rofi
+    - xwallpaper
+    - feh
+    - sxiv
+    - shotgun
+    - slop
