@@ -7,7 +7,6 @@
   loop:
     - xf86-video-intel
     - mesa
-    - lib32-mesa
 - name: Install Xorg related packages
   become: true
   community.general.pacman:
