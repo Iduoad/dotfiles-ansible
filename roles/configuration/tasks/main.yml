@@ -21,7 +21,6 @@
     - newsboat
     - polybar
     - rofi
-    - rtv
     - surfraw
     - surfraw/elvi
     - sxhkd
@@ -78,10 +77,8 @@
     - newsboat
     - polybar
     - rofi
-    - rtv
     - surfraw
     - scripts
-    - ssh
     - sxhkd
     - tmux
     - vifm
