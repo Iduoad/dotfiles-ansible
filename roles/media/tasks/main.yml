@@ -24,6 +24,7 @@
     state: latest
     update_cache: yes
   loop:
+    - alsa-utils
     - pulseaudio
     - pulseaudio-alsa
     - pulsemixer

@@ -21,6 +21,7 @@
     - arandr
     - redshift
     - xdotool
+    - xdo
     - bspwm
     - sxhkd
     - i3lock
