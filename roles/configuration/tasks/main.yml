@@ -95,7 +95,7 @@
 
 - name: delete .ohmyzsh
   ansible.builtin.file:
-    path: /home/guru/.ohmyzsh
+    path: /home/guru/.oh-my-zsh
     state: absent
 
 - name: Install oh my zsh
