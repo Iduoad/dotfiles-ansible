@@ -4,18 +4,7 @@
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - zathura
-    - zathura-pdf-mupdf
-    - zathura-djvu
-    - imagemagick
-    - gimp
-    - aspell
-    - aspell-en
-    - calcurse
-    - sdcv
-    - qrencode
-    - abook
+  loop: "{{ packages.documents }}"
 
 - name: media packages
   become: true
@@ -23,16 +12,7 @@
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - alsa-utils
-    - pulseaudio
-    - pulseaudio-alsa
-    - pulsemixer
-    - mpd
-    - mpc
-    - ncmpcpp
-    - mpv
-    - youtube-dl
+  loop: "{{ packages.media }}"
 
 - name: web and internet packages
   become: true
@@ -40,12 +20,4 @@
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - firefox
-    - w3m
-    - surfraw
-    - newsboat
-    - neomutt
-    - transmission-cli
-    - openssh
-    - rtv
+  loop: "{{ packages.web }}"

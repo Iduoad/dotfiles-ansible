@@ -12,4 +12,4 @@
 - name: Clone dotfiles to home directory
   ansible.builtin.git:
     repo: https://github.com/Iduoad/dotfiles.git
-    dest: /home/guru/dotfiles
+    dest: "/home/{{ ansible_user }}/dotfiles"

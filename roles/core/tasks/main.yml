@@ -1,18 +1,11 @@
 ---
-- name: Install FS related packages
+- name: Install core packages
   become: true
   community.general.pacman:
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - neovim
-    - zsh
-    - tmux
-    - htop
-    - vifm
-    - z
-    - alacritty
+  loop: "{{ packages.core }}"
 
 - name: Install FS related packages
   become: true
@@ -20,13 +13,7 @@
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - e2fsprogs
-    - btrfs-progs
-    - ntfs-3g
-    - exfatprogs
-    - dosfstools
-    - udisks2
+  loop: "{{ packages.fs }}"
 
 - name: Install core utils packages
   become: true
@@ -34,15 +21,7 @@
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - mlocate
-    - bat
-    - tree
-    - entr
-    - fzf
-    - ripgrep
-    - jq
-    - z
+  loop: "{{ packages.utils }}"
 
 - name: Install archiving and compression related packages
   become: true
@@ -50,11 +29,7 @@
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - zip
-    - unzip
-    - unrar
-    - atool
+  loop: "{{ packages.archive }}"
 
 - name: Install network and security related packages
   become: true
@@ -62,12 +37,4 @@
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - openssh
-    - wget
-    - rsync
-    - zsync
-    - rclone
-    - keychain
-    - pass
-    - iw
+  loop: "{{ packages.network }}"

@@ -1,0 +1,34 @@
+packages:
+  documents:
+    - zathura
+    - zathura-pdf-mupdf
+    - zathura-djvu
+    - imagemagick
+    - gimp
+    - aspell
+    - aspell-en
+    - calcurse
+    - sdcv
+    - translate-shell
+    - qrencode
+    - abook
+    - hugo
+  media:
+    - alsa-utils
+    - pulseaudio
+    - pulseaudio-alsa
+    - pulsemixer
+    - mpd
+    - mpc
+    - ncmpcpp
+    - mpv
+    - youtube-dl
+  web:
+    - firefox
+    - w3m
+    - surfraw
+    - newsboat
+    - neomutt
+    - transmission-cli
+    - openssh
+    - rtv

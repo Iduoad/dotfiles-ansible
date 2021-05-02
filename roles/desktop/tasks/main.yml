@@ -4,36 +4,14 @@
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - xf86-video-intel
-    - mesa
+  loop: "{{ packages.drivers }}"
 - name: Install Xorg related packages
   become: true
   community.general.pacman:
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - xorg-server
-    - xorg-xinit
-    - xorg-xbacklight
-    - xclip
-    - arandr
-    - redshift
-    - xdotool
-    - xdo
-    - bspwm
-    - sxhkd
-    - i3lock
-    - unclutter
-    - dunst
-    - dmenu
-    - rofi
-    - xwallpaper
-    - feh
-    - sxiv
-    - shotgun
-    - slop
+  loop: "{{ packages.xorg }}"
 
 - name: Install fonts
   become: true
@@ -41,11 +19,4 @@
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - noto-fonts-emoji
-    - ttf-dejavu
-    - ttf-droid
-    - powerline-fonts
-    - ttf-font-awesome
-    - ttf-liberation
-    - adobe-source-code-pro-fonts
+  loop: "{{ packages.fonts }}"

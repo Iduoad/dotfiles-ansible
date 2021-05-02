@@ -1,0 +1,17 @@
+packages:
+  containers:
+    - podman
+    - buildah
+    - skopeo
+    - crun
+    - lxc
+    - lxd
+    - kubectl
+    - kubectx
+  virtualization:
+    - qemu
+    - libvirt
+    - virt-install
+    - cloud-image-utils
+    - edk2-ovmf
+    - dmidecode

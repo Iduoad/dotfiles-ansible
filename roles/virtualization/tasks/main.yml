@@ -5,13 +5,7 @@
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - podman
-    - buildah
-    - skopeo
-    - crun
-    - lxc
-    - lxd
+  loop: "{{ packages.containers }}"
 
 - name: Install virtualization packages
   become: true
@@ -19,6 +13,4 @@
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop:
-    - qemu
-    - libvirt
+  loop: "{{ packages.virtualization }}"

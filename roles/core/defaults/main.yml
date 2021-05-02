@@ -1,0 +1,41 @@
+packages:
+  core:
+    - neovim
+    - zsh
+    - tmux
+    - htop
+    - vifm
+    - z
+    - alacritty
+  fs:
+    - e2fsprogs
+    - btrfs-progs
+    - ntfs-3g
+    - exfatprogs
+    - dosfstools
+    - udisks2
+  utils:
+    - man
+    - mlocate
+    - bat
+    - tree
+    - entr
+    - fzf
+    - ripgrep
+    - jq
+  archive:
+    - zip
+    - unzip
+    - unrar
+    - atool
+  network:
+    - openssh
+    - wget
+    - rsync
+    - zsync
+    - rclone
+    - keychain
+    - pass
+    - nftables
+    - gnu-netcat
+    - iw
